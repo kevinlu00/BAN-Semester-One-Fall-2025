@@ -1,0 +1,37 @@
+
+/* 1. Format the program to improve the spacing. What syntax error is detected? */
+
+/* There are two syntax errors I found. */
+/* 1. In "where region = "Canada " after set sashelp.shoes,
+	Missing quatations mark and semi-colon at 
+	the end. It should be like "Canada"; 
+	
+/* 2. In the second last "prc print data=canadashoes", it spelled wrong. 
+	Instead of saying "prc" the correct statement if they want to print,
+	it should be "proc" like "proc print data=canadashoes" */
+	
+/* 2. Fix the error and run the program */
+data canadashoes;
+set sashelp.shoes;
+	where region = "Canada"; /*Missing the end quatiation mark*/
+							/* Instead of "Canada; , now the correct way should be
+							 like this "Canada" */
+	Profit=Sales-Returns;
+run;
+proc print data=canadashoes; /*spell the proc wrong. Correct should be "proc" instead of "prc" */
+run;
+
+/* 3. Read the log and identify any additional syntax errors. Correct the syntax errors and format
+the program again. Add a comment to describe the changes that you made to the program.
+/* Before I fix the program, I find there are two syntax errors, so I fixed it, and run the program.
+After I run the program, no syntax error. When I fixed the program, I included the comment what wnet wrong
+and showing the correct way in order to avoid another syntax errors. */
+
+/* 4. Run the program and examine the log and results. How many rows are in the canadashoes data? */
+*Run the program;
+proc print data=canadashoes;
+run;
+/* Examine the log and results */
+proc contents data=canadashoes;
+run;
+/* Therefore, there are 37 rows in the canadashoes data. */
